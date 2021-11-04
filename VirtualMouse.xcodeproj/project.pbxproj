@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE18BC132731B579001B20B7 /* PeertalkManager in Frameworks */ = {isa = PBXBuildFile; productRef = CE18BC122731B579001B20B7 /* PeertalkManager */; };
 		CE36DA472731A51B00CD68D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DA462731A51B00CD68D0 /* AppDelegate.swift */; };
 		CE36DA492731A51B00CD68D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DA482731A51B00CD68D0 /* SceneDelegate.swift */; };
 		CE36DA4B2731A51B00CD68D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE36DA4A2731A51B00CD68D0 /* ViewController.swift */; };
@@ -31,17 +32,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE18BC132731B579001B20B7 /* PeertalkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE18BC102731B562001B20B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE36DA3A2731A51B00CD68D0 = {
 			isa = PBXGroup;
 			children = (
 				CE36DA452731A51B00CD68D0 /* VirtualMouse */,
 				CE36DA442731A51B00CD68D0 /* Products */,
+				CE18BC102731B562001B20B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = VirtualMouse;
+			packageProductDependencies = (
+				CE18BC122731B579001B20B7 /* PeertalkManager */,
+			);
 			productName = VirtualMouse;
 			productReference = CE36DA432731A51B00CD68D0 /* VirtualMouse.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = CE36DA3A2731A51B00CD68D0;
+			packageReferences = (
+				CE18BC112731B579001B20B7 /* XCRemoteSwiftPackageReference "peertalk-simple" */,
+			);
 			productRefGroup = CE36DA442731A51B00CD68D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -295,8 +311,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,8 +341,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE18BC112731B579001B20B7 /* XCRemoteSwiftPackageReference "peertalk-simple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kokluch/peertalk-simple";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE18BC122731B579001B20B7 /* PeertalkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE18BC112731B579001B20B7 /* XCRemoteSwiftPackageReference "peertalk-simple" */;
+			productName = PeertalkManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE36DA3B2731A51B00CD68D0 /* Project object */;
 }
