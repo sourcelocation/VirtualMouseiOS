@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Peertalk",
+        "repositoryURL": "https://github.com/kokluch/peertalk",
+        "state": {
+          "branch": null,
+          "revision": "49449a757c72b7ebf3641e274d32b5b35dd20ae4",
+          "version": "0.2.0"
+        }
+      },
+      {
+        "package": "PeertalkManager",
+        "repositoryURL": "https://github.com/kokluch/peertalk-simple",
+        "state": {
+          "branch": null,
+          "revision": "fa9ba809ae218a95d9378b3d54a2bb43f21d3161",
+          "version": "0.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

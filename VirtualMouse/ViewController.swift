@@ -30,6 +30,7 @@ class ViewController: UIViewController, PTManagerDelegate {
     
     @IBOutlet weak var xsens: UISlider!
     @IBOutlet weak var ysens: UISlider!
+    
     @IBAction func xsens(_ sender: UISlider) {
         sens.0 = Double(sender.value)
         UserDefaults.standard.set(sens.0 - 1, forKey: "xsens")
@@ -73,24 +74,37 @@ class ViewController: UIViewController, PTManagerDelegate {
     fileprivate func startGyro() {
         motion.gyroUpdateInterval = 1/60
         motion.startGyroUpdates()
+        motion.startAccelerometerUpdates()
         
         timer = Timer(fire: Date(), interval: (1/60), repeats: true, block: { (timer) in
-            if let data = self.motion.gyroData {
+//            if let data = self.motion.gyroData {
+//                if self.sendData {
+//                    self.gyroFire(data: data)
+//                } else {
+//                    self.offset = (self.offset.0 + data.rotationRate.x, self.offset.1 + data.rotationRate.y, self.offset.2 + data.rotationRate.z)
+//                    self.label.text = "calibration in progress"
+//                }
+//            }
+            if let data = self.motion.accelerometerData {
                 if self.sendData {
                     self.gyroFire(data: data)
                 } else {
-                    self.offset = (self.offset.0 + data.rotationRate.x, self.offset.1 + data.rotationRate.y, self.offset.2 + data.rotationRate.z)
+                    self.offset = (self.offset.0 + data.acceleration.x, self.offset.1 + data.acceleration.y, self.offset.2 + data.acceleration.z)
                     self.label.text = "calibration in progress"
                 }
+//               let z = data.acceleration.z
+
+
+               // Use the accelerometer data in your app.
             }
         })
         
         RunLoop.current.add(timer!, forMode: .default)
     }
-    func gyroFire(data: CMGyroData) {
-        let x = data.rotationRate.x - antiCal.0
-        let y = data.rotationRate.y - antiCal.1
-        let z = data.rotationRate.z - antiCal.2
+    func gyroFire(data: CMAccelerometerData) {
+        let x = data.acceleration.x - antiCal.0
+        let y = data.acceleration.y - antiCal.1
+        let z = data.acceleration.z - antiCal.2
         self.label.text = "X:\(x)\nY:\(y)\nZ:\(z)"
         print(x,y,z)
         
